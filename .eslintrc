@@ -1,0 +1,30 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    // "no-param-reassign": "off",
+    "no-console": "off",
+    // "react/prop-types": "off",
+    "func-names": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }], // allows for i++ or i-- in third arg of for loop
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }] // allows short circuit and ternary operators in expressions
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "ecmaVersion": 2018
+  },
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
