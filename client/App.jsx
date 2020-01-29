@@ -2,7 +2,7 @@ import React from 'react';
 
 const App = () => (
   <div>
-    succy me hawgy, coppa
+    React app rendering stuff
   </div>
 );
 
