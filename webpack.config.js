@@ -9,15 +9,14 @@ module.exports = {
     filename: 'bundle.js',
   },
   devServer: {
-    publicPath: '/build/',
-    contentBase: path.resolve(__dirname, './client/'),
+    publicPath: '/build',
     hot: true,
-    proxy: [
-      {
-        context: ['/'],
-        target: 'http://localhost:3000',
-      },
-    ],
+    // proxy: [
+    //   {
+    //     context: ['/'],
+    //     target: 'http://localhost:3000',
+    //   },
+    // ],
   },
   module: {
     rules: [
