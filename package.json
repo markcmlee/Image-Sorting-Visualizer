@@ -13,7 +13,8 @@
     "prop-types-exact": "^1.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-hooks": "^1.0.1"
+    "react-hooks": "^1.0.1",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
@@ -37,10 +38,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production node -r dotenv/config server/server.js",
-    "build": "NODE_ENV=production webpack",
     "prestart": "npm run build",
-    "dev": "NODE_ENV=development nodemon -r dotenv/config server/server.js & NODE_ENV=development webpack-dev-server"
+    "start": "set \"NODE_ENV=production\" && nodemon server/server.js",
+    "build": "set \"NODE_ENV=production\" && webpack",
+    "dev": "set \"NODE_ENV=development\" && concurrently \"webpack-dev-server --open\" \"nodemon server/server.js\""
   },
   "keywords": [],
   "author": "",
