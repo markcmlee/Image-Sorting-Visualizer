@@ -146,8 +146,6 @@ const ImageVisualizer = (props) => {
     image.onload = () => {
       canvas.width = image.width;
       canvas.height = image.height;
-      // image.width = canvas.width;
-      // image.height = canvas.height;
       pieceWidth = canvas.width / cols;
       pieceHeight = canvas.height / rows;
       for (let i = 0; i < rows; i++) {
