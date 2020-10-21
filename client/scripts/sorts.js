@@ -47,26 +47,22 @@ function quickSort(arrayCopy, animations, startIdx, endIdx) {
   let leftIndex = startIdx + 1;
   let rightIndex = endIdx;
   while (rightIndex >= leftIndex) {
-    if (
-      arrayCopy[leftIndex].val > arrayCopy[pivot].val &&
-      arrayCopy[rightIndex].val < arrayCopy[pivot].val
-    ) {
-      swap(leftIndex, rightIndex, arrayCopy);
-      animations.push([leftIndex, rightIndex]);
-    }
-    if (arrayCopy[leftIndex].val <= arrayCopy[pivot].val) leftIndex++;
-    if (arrayCopy[rightIndex].val >= arrayCopy[pivot].val) rightIndex--;
+      if (arrayCopy[leftIndex].val > arrayCopy[pivot].val && arrayCopy[rightIndex].val < arrayCopy[pivot].val) {
+          swap(leftIndex, rightIndex, arrayCopy);
+          animations.push([leftIndex, rightIndex]);
+      }
+      if (arrayCopy[leftIndex].val <= arrayCopy[pivot].val) leftIndex++;
+      if (arrayCopy[rightIndex].val >= arrayCopy[pivot].val) rightIndex--;
   }
   swap(pivot, rightIndex, arrayCopy);
   animations.push([pivot, rightIndex]);
-  const leftSubarrayIsSmaller =
-    rightIndex - 1 - startIdx < endIdx - (rightIndex + 1);
+  const leftSubarrayIsSmaller = rightIndex - 1 - startIdx < endIdx - (rightIndex + 1);
   if (leftSubarrayIsSmaller) {
-    quickSort(arrayCopy, animations, startIdx, rightIndex - 1);
-    quickSort(arrayCopy, animations, rightIndex + 1, endIdx);
+      quickSort(arrayCopy, animations, startIdx, rightIndex - 1);
+      quickSort(arrayCopy, animations, rightIndex + 1, endIdx);
   } else {
-    quickSort(arrayCopy, animations, rightIndex + 1, endIdx);
-    quickSort(arrayCopy, animations, startIdx, rightIndex - 1);
+      quickSort(arrayCopy, animations,rightIndex + 1, endIdx);
+      quickSort(arrayCopy, animations, startIdx, rightIndex - 1);
   }
 }
 
@@ -118,4 +114,4 @@ function swap(i, j, array) {
   swaps++
 }
 
-export { selectionSort, bubbleSort, insertionSort, quickSort, heapSort, swaps };
+export { selectionSort, bubbleSort, insertionSort, quickSort, heapSort, swaps, swap };

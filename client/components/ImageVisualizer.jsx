@@ -5,7 +5,8 @@ import {
   insertionSort,
   quickSort,
   heapSort,
-  swaps
+  swaps,
+  swap
 } from '../scripts/sorts';
 
 const ImageVisualizer = (props) => {
@@ -64,7 +65,7 @@ const ImageVisualizer = (props) => {
     animations = [];
     let postDataCopy = randoms.slice();
     setStartTimer(performance.now());
-    quickSort(postDataCopy, animations);
+    quickSort(postDataCopy, animations, 0, randoms.length - 1);
     setEndTimer(performance.now());
     processAnimation();
   };
@@ -102,12 +103,12 @@ const ImageVisualizer = (props) => {
           )
         }
       }
-    }, 25)
+    }, 100)
   }
 
   const highlight = (first, second) => {
     ctx.strokeStyle = "#cfe627";
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 10;
     ctx.strokeRect(
       randoms[first].col * pieceWidth,
       randoms[first].row * pieceHeight,
@@ -115,7 +116,7 @@ const ImageVisualizer = (props) => {
       pieceHeight
     )
     ctx.strokeStyle = "#cfe627";
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 10;
     ctx.strokeRect(
       randoms[second].col * pieceWidth,
       randoms[second].row * pieceHeight,
@@ -137,7 +138,7 @@ const ImageVisualizer = (props) => {
       randoms[part[1]] = temp;
       highlight(part[1], part[0]);
       startIndex++;
-    }, 25)
+    }, 50)
   }
 
   const start = () => {
@@ -177,51 +178,47 @@ const ImageVisualizer = (props) => {
   }, [started])
 
   useEffect(() => {
-    log();
-  }, [finished])
-
-  useEffect(() => {
     console.log("start", startTimer);
     console.log("end", endTimer)
   }, [startTimer, endTimer])
 
-  const log = () => {
-    console.log("final animations array", animations)
-  }
-
   return (
     <>
       <div>
-          <h1 style={{ textAlign: "center", paddingTop: "1rem", paddingBottom: "1rem", fontStyle: "italic" }}>
+          <h1 style={{ textAlign: "center", paddingTop: "1rem" }}>
             Choose a sorting algorithm
           </h1>
 
+        <div style={{textAlign: "center", paddingBottom: ".5rem", fontStyle: "italic"}}>
+          <h6>
+            The swapping animation is considerably slower than the function execution.
+          </h6>
+        </div>
+
         {!chosen && (
           <div className="buttonContainer">
-          <div className="sortButtonContainer">
-            <button className="sortingButton" onClick={insertion}>
-              Insertion Sort
-            </button>
-            <button className="sortingButton" onClick={selection}>
-              Selection Sort
-            </button>
-            <button className="sortingButton" onClick={bubble}>
-              Bubble Sort
-            </button>
-            <button className="sortingButton" onClick={quick}>
-              Quick Sort
-            </button>
-            <button className="sortingButton" onClick={heap}>
-              Heap Sort
-            </button>
+            <div className="sortButtonContainer">
+              <button className="sortingButton" onClick={insertion}>
+                Insertion Sort
+              </button>
+              <button className="sortingButton" onClick={selection}>
+                Selection Sort
+              </button>
+              <button className="sortingButton" onClick={bubble}>
+                Bubble Sort
+              </button>
+              <button className="sortingButton" onClick={quick}>
+                Quick Sort
+              </button>
+              <button className="sortingButton" onClick={heap}>
+                Heap Sort
+              </button>
+            </div>
           </div>
-        </div>
         )}
-        
-        
       </div>
-
       <br />
+
       <div className="canvasContainer">
         <canvas
           id="myCanvas"
