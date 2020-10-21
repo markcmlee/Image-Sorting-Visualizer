@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import styled from 'styled-components';
+import "./styles/main.css"
 import App from './App.jsx';
 
 render(

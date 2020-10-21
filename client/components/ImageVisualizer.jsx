@@ -98,7 +98,7 @@ const ImageVisualizer = (props) => {
           )
         }
       }
-    }, 100)
+    }, 250)
   }
 
   const highlight = (first, second) => {
@@ -133,7 +133,7 @@ const ImageVisualizer = (props) => {
       randoms[part[1]] = temp;
       highlight(part[1], part[0]);
       startIndex++;
-    }, 50)
+    }, 125)
   }
 
   const start = () => {
@@ -191,19 +191,19 @@ const ImageVisualizer = (props) => {
         {!chosen && (
           <div className="buttonContainer">
             <div className="sortButtonContainer">
-              <button className="sortingButton" onClick={insertion}>
+              <button className="sortingButton" onClick={chosen ? null : insertion}>
                 <b>Insertion </b><span id="littleDarker">Sort</span>
               </button>
-              <button className="sortingButton" onClick={selection}>
+              <button className="sortingButton" onClick={chosen ? null : selection}>
                 <b>Selection </b><span id="littleDarker">Sort</span>
               </button>
-              <button className="sortingButton" onClick={bubble}>
+              <button className="sortingButton" onClick={chosen ? null : bubble}>
                 <b>Bubble </b><span id="littleDarker">Sort</span>
               </button>
-              <button className="sortingButton" onClick={quick}>
+              <button className="sortingButton" onClick={chosen ? null : quick}>
                 <b>Quick </b><span id="littleDarker">Sort</span>
               </button>
-              <button className="sortingButton" onClick={heap}>
+              <button className="sortingButton" onClick={chosen ? null : heap}>
                 <b>Heap </b><span id="littleDarker">Sort</span>
               </button>
             </div>
