@@ -9,8 +9,8 @@ const PreSort = (props) => {
     const target = e.target;
     const value = target.value;
 
-    if (value < 10) setCols(10);
-    if (value > 200) setCols(200);
+    if (value < 5) setCols(5);
+    if (value > 50) setCols(50);
     setCols(value)
   }
 
@@ -19,8 +19,8 @@ const PreSort = (props) => {
     const target = e.target;
     const value = target.value;
 
-    if (value < 10) setRows(10);
-    if (value > 200) setRows(200);
+    if (value < 5) setRows(5);
+    if (value > 50) setRows(50);
     setRows(value)
   }
 
@@ -41,8 +41,8 @@ const PreSort = (props) => {
         <label>Number of Rows: 
           <input
             type="number"
-            min="10"
-            max="200"
+            min="5"
+            max="50"
             defaultValue={rows}
             id="rowInput"
             onChange={rowsOnChange} 
@@ -54,8 +54,8 @@ const PreSort = (props) => {
         <label>Number of Columns: 
           <input
             type="number"
-            min="10"
-            max="200"
+            min="5"
+            max="50"
             defaultValue={cols}
             id="colInput"
             onChange={colsOnChange} 

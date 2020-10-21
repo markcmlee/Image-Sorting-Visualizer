@@ -18,13 +18,12 @@ body,
 }
 
 #root {
-  background-image: url("../assets/images/imageVisualizerBG.jpg");
+  background-image: url("../assets/images/whiteCanvas.jpg");
 }
 
 #title {
   text-align: center;
   font-size: 6rem;
-  color: white;
   font-style: italic;
   position: relative;
 }
@@ -49,11 +48,11 @@ body,
   /* align-items: flex-start; */
   justify-content: center;
   /* border: 1px solid black; */
-  height: 150px;
+  height: 175px;
   width: 20%;
-  background-color: #09c5d8;
+  background-color: #333333;
   border-radius: 5px;
-  color: black;
+  color: rgb(207, 207, 207);
   min-width: 370px;
   margin-top: auto;
   margin-bottom: auto;
@@ -72,4 +71,41 @@ body,
   justify-content: space-between;
   align-self: center;
   justify-self: center;
+}
+
+.canvasContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#myCanvas {
+  border: 3px solid black;
+}
+
+.buttonContainer {
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+}
+
+.sortInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.finishedButtonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#finishedButton {
+  background-color: orange;
+  font-family: Roboto, sans-serif;
+  font-style: bold;
+  border-radius: 10px;
 }

@@ -1,3 +1,5 @@
+let swaps = 0;
+
 function selectionSort(arrayCopy, animations) {
   let startIdx = 0;
   while (startIdx < arrayCopy.length - 1) {
@@ -113,6 +115,7 @@ function swap(i, j, array) {
   let temp = array[i];
   array[i] = array[j];
   array[j] = temp;
+  swaps++
 }
 
-export { selectionSort, bubbleSort, insertionSort, quickSort, heapSort };
+export { selectionSort, bubbleSort, insertionSort, quickSort, heapSort, swaps };

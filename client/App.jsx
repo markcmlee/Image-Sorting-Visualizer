@@ -5,9 +5,10 @@ import PreSort from './components/PreSort.jsx';
 import ImageVisualizer from './components/ImageVisualizer.jsx';
 
 const App = () => {
-  const [cols, setCols] = useState(50);
-  const [rows, setRows] = useState(50);
+  const [cols, setCols] = useState(10);
+  const [rows, setRows] = useState(10);
   const [link, setLink] = useState(null);
+  const [numSwaps, setNumSwaps] = useState(0);
   const [isEverythingValid, setIsEverythingValid] = useState(false);
 
   if (!isEverythingValid) {
@@ -36,6 +37,8 @@ const App = () => {
           cols={cols}
           rows={rows}
           link={link}
+          numSwaps={numSwaps}
+          setNumSwaps={setNumSwaps}
         />
       </div>
     )
