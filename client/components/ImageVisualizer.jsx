@@ -194,11 +194,11 @@ const ImageVisualizer = (props) => {
               <button className="sortingButton" onClick={chosen ? null : insertion}>
                 <b>Insertion </b><span id="littleDarker">Sort</span>
               </button>
-              <button className="sortingButton" onClick={chosen ? null : selection}>
-                <b>Selection </b><span id="littleDarker">Sort</span>
-              </button>
               <button className="sortingButton" onClick={chosen ? null : bubble}>
                 <b>Bubble </b><span id="littleDarker">Sort</span>
+              </button>
+              <button className="sortingButton" onClick={chosen ? null : selection}>
+                <b>Selection </b><span id="littleDarker">Sort</span>
               </button>
               <button className="sortingButton" onClick={chosen ? null : quick}>
                 <b>Quick </b><span id="littleDarker">Sort</span>
