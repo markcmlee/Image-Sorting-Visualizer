@@ -46,7 +46,7 @@ const PreSort = (props) => {
           defaultValue={rows}
           id="rowInput"
           onChange={rowsOnChange} 
-          style={{width: "75px", float: "right"}}  
+          style={{width: "60px", float: "right", borderRadius: "2px"}}  
         />
       </label>
 
@@ -58,7 +58,7 @@ const PreSort = (props) => {
           defaultValue={cols}
           id="colInput"
           onChange={colsOnChange} 
-          style={{width: "75px", float: "right"}}  
+          style={{width: "60px", float: "right", borderRadius: "2px"}}  
         />
       </label>
 
@@ -67,7 +67,7 @@ const PreSort = (props) => {
           type="text"
           id="linkInput"
           onChange={linkOnChange}  
-          style={{float: "right", width: "75%"}}
+          style={{float: "right", width: "75%", borderRadius: "2px"}}
         />
       </label>
 

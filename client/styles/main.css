@@ -62,7 +62,16 @@ body,
   background-color: orange;
   font-family: Roboto, sans-serif;
   font-style: bold;
+  border: 1px solid orange;
   border-radius: 10px;
+}
+#submitButton:hover {
+  background-color: rgb(223, 145, 0);
+  border: 1px solid orange;
+}
+#submitButton:active {
+  background-color: rgb(223, 145, 0);
+  border: 1px solid rgb(138, 90, 0);
 }
 
 .sortButtonContainer {
@@ -96,6 +105,18 @@ body,
   justify-content: center;
 }
 
+.sortingButton {
+  margin: 1px solid black;
+  background-color: rgb(59, 59, 59);
+  color: white;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+
+#littleDarker {
+  color: rgb(209, 209, 209);
+}
+
 .finishedButtonContainer {
   display: flex;
   flex-direction: row;
@@ -108,4 +129,5 @@ body,
   font-family: Roboto, sans-serif;
   font-style: bold;
   border-radius: 10px;
+  padding: 3px 10px;
 }

@@ -18,17 +18,16 @@ const ImageVisualizer = (props) => {
   let pieceWidth = null;
   let pieceHeight = null;
   let startIndex = 0;
+  let animations = [];
+
   const [started, setStarted] = useState(false);
   const [chosen, setChosen] = useState(null);
   const [startTimer, setStartTimer] = useState(null);
   const [endTimer, setEndTimer] = useState(null);
-  // const [animations, setAnimations] = useState([]);
-  let animations = [];
   const [finished, setFinished] = useState(false);
 
   const insertion = () => {
     setChosen({ name: "Insertion Sort", complexity: "O(n^2)" });
-    // setAnimations([]);
     animations = [];
     let postDataCopy = randoms.slice();
     setStartTimer(performance.now());
@@ -39,7 +38,6 @@ const ImageVisualizer = (props) => {
   
   const bubble = () => {
     setChosen({ name: "Bubble Sort", complexity: "O(n^2)" });
-    // setAnimations([]);
     animations = [];
     let postDataCopy = randoms.slice();
     setStartTimer(performance.now());
@@ -50,7 +48,6 @@ const ImageVisualizer = (props) => {
   
   const selection = () => {
     setChosen({ name: "Selection Sort", complexity: "O(n^2)" });
-    // setAnimations([]);
     animations = [];
     let postDataCopy = randoms.slice();
     setStartTimer(performance.now());
@@ -61,7 +58,6 @@ const ImageVisualizer = (props) => {
 
   const quick = () => {
     setChosen({ name: "Quick Sort", complexity: "O(n*log(n))" });
-    // setAnimations([]);
     animations = [];
     let postDataCopy = randoms.slice();
     setStartTimer(performance.now());
@@ -72,7 +68,6 @@ const ImageVisualizer = (props) => {
 
   const heap = () => {
     setChosen({ name: "Heap Sort", complexity: "O(n*log(n))" });
-    // setAnimations([]);
     animations = [];
     let postDataCopy = randoms.slice();
     setStartTimer(performance.now());
@@ -199,19 +194,19 @@ const ImageVisualizer = (props) => {
           <div className="buttonContainer">
             <div className="sortButtonContainer">
               <button className="sortingButton" onClick={insertion}>
-                Insertion Sort
+                <b>Insertion </b><span id="littleDarker">Sort</span>
               </button>
               <button className="sortingButton" onClick={selection}>
-                Selection Sort
+                <b>Selection </b><span id="littleDarker">Sort</span>
               </button>
               <button className="sortingButton" onClick={bubble}>
-                Bubble Sort
+                <b>Bubble </b><span id="littleDarker">Sort</span>
               </button>
               <button className="sortingButton" onClick={quick}>
-                Quick Sort
+                <b>Quick </b><span id="littleDarker">Sort</span>
               </button>
               <button className="sortingButton" onClick={heap}>
-                Heap Sort
+                <b>Heap </b><span id="littleDarker">Sort</span>
               </button>
             </div>
           </div>
@@ -260,7 +255,7 @@ const ImageVisualizer = (props) => {
             id="finishedButton"
             onClick={reloadPage}
           >
-            Finished! Start again?
+            Finished! <b>Start again?</b>
           </button>
         </div>
       )}
