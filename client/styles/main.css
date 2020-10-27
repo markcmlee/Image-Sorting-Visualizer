@@ -74,6 +74,19 @@ body,
   border: 1px solid rgb(138, 90, 0);
 }
 
+.instructionContainer {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+}
+
+#instruction {
+  color: rgb(95, 95, 95);
+}
+
 .sortButtonContainer {
   display: flex;
   flex-direction: row;

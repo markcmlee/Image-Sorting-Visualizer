@@ -28,6 +28,10 @@ const App = () => {
             setIsEverythingValid={setIsEverythingValid}
           />
         </div>
+        <div className='instructionContainer'>
+          <p id="instruction">Please select the desired number of rows and columns (10 recommended)</p>
+          <p id="instruction">URLs should end in an image file extension (.jpg, .png, etc...)</p>
+        </div>
       </>
     )
   } else {
