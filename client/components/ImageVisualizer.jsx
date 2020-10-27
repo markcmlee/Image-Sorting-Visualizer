@@ -28,7 +28,6 @@ const ImageVisualizer = (props) => {
 
   const insertion = () => {
     setChosen({ name: "Insertion Sort", complexity: "O(n^2)" });
-    animations = [];
     let postDataCopy = randoms.slice();
     setStartTimer(performance.now());
     insertionSort(postDataCopy, animations);
@@ -170,11 +169,6 @@ const ImageVisualizer = (props) => {
     start();
   }, [started])
 
-  useEffect(() => {
-    console.log("start", startTimer);
-    console.log("end", endTimer)
-  }, [startTimer, endTimer])
-
   return (
     <>
       <div>
@@ -191,20 +185,20 @@ const ImageVisualizer = (props) => {
         {!chosen && (
           <div className="buttonContainer">
             <div className="sortButtonContainer">
-              <button className="sortingButton" onClick={chosen ? null : insertion}>
-                <b>Insertion </b><span id="littleDarker">Sort</span>
-              </button>
               <button className="sortingButton" onClick={chosen ? null : bubble}>
                 <b>Bubble </b><span id="littleDarker">Sort</span>
+              </button>
+              <button className="sortingButton" onClick={chosen ? null : insertion}>
+                <b>Insertion </b><span id="littleDarker">Sort</span>
               </button>
               <button className="sortingButton" onClick={chosen ? null : selection}>
                 <b>Selection </b><span id="littleDarker">Sort</span>
               </button>
-              <button className="sortingButton" onClick={chosen ? null : quick}>
-                <b>Quick </b><span id="littleDarker">Sort</span>
-              </button>
               <button className="sortingButton" onClick={chosen ? null : heap}>
                 <b>Heap </b><span id="littleDarker">Sort</span>
+              </button>
+              <button className="sortingButton" onClick={chosen ? null : quick}>
+                <b>Quick </b><span id="littleDarker">Sort</span>
               </button>
             </div>
           </div>
@@ -215,7 +209,6 @@ const ImageVisualizer = (props) => {
       <div className="canvasContainer">
         <canvas
           id="myCanvas"
-          // ref="canvas"
           style={{ width: "60%", height: "60%", zIndex: "0"}}
         ></canvas>
       </div>
